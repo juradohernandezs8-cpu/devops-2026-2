@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { tasksRouter } from "./routes/tasks.routes.js";
 import { postgresRouter } from "./routes/postgres.routes.js";
 import { mongoRouter } from "./routes/mongo.routes.js";
 import { productsRouter } from "./routes/products.routes.js";
@@ -16,7 +17,9 @@ export function createApp() {
 
   app.use("/api/postgres", postgresRouter);
   app.use("/api/mongo", mongoRouter);
+  app.use("/api/tasks", tasksRouter);
   app.use("/api/products", productsRouter);
+  
 
   app.use((_req, res) => {
     res.status(404).json({ message: "Route not found" });
