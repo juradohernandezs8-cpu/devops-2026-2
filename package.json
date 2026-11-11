@@ -5,6 +5,10 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
+    "benchmark:service": "node scripts/service-benchmark.mjs",
+    "test:timing": "node scripts/test-timing.mjs all",
+    "test:timing:productos": "node scripts/test-timing.mjs productos",
+    "ci:timing": "node scripts/ci-timing.mjs",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
